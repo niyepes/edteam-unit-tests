@@ -1,6 +1,5 @@
-package com.edteam.reservations.repository;
-
 import com.edteam.reservations.model.Reservation;
+import com.edteam.reservations.repository.ReservationRepository;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
@@ -27,7 +26,7 @@ public class ReservationRepositoryTest {
         ReservationRepository repository = new ReservationRepository();
 
         //WHen
-        Optional<Reservation> result = repository.getReservationById(1L);
+        Optional<Reservation> result = repository.getReservationById(6L);
 
         //Then
         assertTrue(result.isEmpty());

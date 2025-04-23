@@ -13,11 +13,15 @@ public class ReservationRepositoryTest {
         //Given
         ReservationRepository repository = new ReservationRepository();
 
-        //WHen
+        //When
         Optional<Reservation> result = repository.getReservationById(1L);
 
         //Then
-        assertEquals(1L, result.get().getId());
+        assertAll(
+                () -> assertNotNull(result),
+                () -> assertTrue(result.isPresent()),
+                () -> assertEquals(1L, result.get().getId())
+        );
     }
 
     @Test
